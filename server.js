@@ -3,12 +3,13 @@
 // https://github.com/yagop/node-telegram-bot-api/issues/540
 process.env.NTBA_FIX_319 = 1; // must be on top
 require('dotenv').config();
-// const axios = require('axios');
 const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
 const validator = require('validator');
+
 const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
+
 // Heroku routes from port :443 to $PORT
 // Add URL of your app to env variable or enable Dyno Metadata
 // to get this automatically
