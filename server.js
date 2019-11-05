@@ -28,7 +28,7 @@ const options = {
 
 const bot = new TelegramBot(TOKEN);
 
-process.env.NODE_ENV === 'production' ? startProdMode(bot) : process.exit(1);
+process.env.NODE_ENV === 'production' ? startProdMode(bot) : startDevMode(bot);
 
 async function startDevMode(bot) {
   try {
