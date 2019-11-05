@@ -1,9 +1,14 @@
 require('dotenv').config();
 // const axios = require('axios');
 const express = require('express');
+const bodyParser = require('body-parser');
+
+const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 
 const app = express();
-const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.status(200).json({ msg: 'Hello World!' });
